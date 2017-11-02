@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Carla's Classroom | It All Adds Up</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+		
+function multiplyIt()
+{
+	 	
+	levelOne();
+	function levelOne()
+	{
+	
+	 	//initialize variables
+		var count1 = 1;
+		var choice = "y";
+		var num = 0;
+		var countX = 1;
+			
+		//Prompt for default or enter number of problems for this level
+		 var choice = prompt("Do you want to continue only until you get 5 correct? Type 'y' for yes or 'n' for no:"," " );
+		//if student chooses default
+		if ((choice == "y") || (choice == "Y"))
+		{
+			num = count1; 
+			choice = "y";
+		}
+		//if student chooses to enter a number
+		else if ((choice !="y") || (choice != "Y"))
+		{
+			num = parseInt(prompt("How many problems do you want to try ?"," " ));
+			choice = "n";
+		}
+		
+		 //loop to continue generating addition problems 
+		 while (((choice == "y") && (count1 <6)) || ((choice == "n") && (countX<= num)))
+		 {
+			var num1a = (Math.floor(Math.random() * 10)) + 1;
+			var num1b = (Math.floor(Math.random() * 10)) + 1;
+			var prod1 = num1a * num1b;
+			var response = parseInt(prompt("What is the product of " + num1a + " and "+ num1b + " ?"));
+			if (response == prod1)
+			{
+				count1 = count1 + 1;
+				var result = "Correct!";
+				alert(result);
+			}
+			else
+			{
+				result = "Incorrect1";
+				alert(result);
+			}
+			countX = countX + 1;
+		}
+		   
+		 //alert student when level is completed  
+		alert("You completed " + (countX - 1)+ " problems and got "+ (count1 - 1 ) + " correct.");
+		//Level One problems are done, call Level Two or end session
+			var move = prompt("Do you want to move to level two? Type 'y' for yes or 'n' to end this session", " ");
+			if ((move == "y") || (move == "Y"))
+			{
+				levelTwo();
+			}
+			else
+			alert("This session is ended.");
+	}
+	
+	function levelTwo()
+	{
+	 	//initialize variables
+		var count2 = 1;
+		var choice = "y";
+		var num = 0;
+		var countX = 1;
+			
+		//Prompt for default or enter number of problems for this level
+		 var choice = prompt("Do you want to continue only until you get 5 correct? Type 'y' for yes or 'n' for no:"," " );
+		//if student chooses default
+		if ((choice == "y") || (choice == "Y"))
+		{
+			num = count2; 
+			choice = "y";
+		}
+		//if student chooses to enter a number
+		else if ((choice !="y") || (choice != "Y"))
+		{
+			num = parseInt(prompt("How many problems do you want to try ?"," " ));
+			choice = "n";
+		}
+		
+		 //loop to continue generating addition problems 
+		 while (((choice == "y") && (count2 <6)) || ((choice == "n") && (countX<= num)))
+		 {
+			var num2a = (Math.floor(Math.random() * 100)) + 10;
+			var num2b = (Math.floor(Math.random() * 100)) + 1;
+			var prod2 = num2a * num2b;
+			var response = parseInt(prompt("What is the product of " + num2a + " and "+ num2b + " ?"));
+			if (response == prod2)
+			{
+				count2 = count2 + 1;
+				var result = "Correct!";
+				alert(result);
+			}
+			else
+			{
+				result = "Incorrect1";
+				alert(result);
+			}
+			countX = countX + 1;
+		}
+		   
+		 //alert student when level is completed  
+		alert("You completed " + (countX - 1)+ " problems and got "+ (count2 - 1 ) + " correct.");
+		//Level One problems are done, call Level Three or end session
+			alert("This session is ended.");	 
+	}
+	
+}
+	</script>
+</head>
+<body>
+<div id="container">
+<img src="images/arith_big.jpg" class="floatleft" />  
+<h1 id="logo">It All Adds Up!</h1>
+<div style="clear:both;"></div>
+  <div align="left">
+    <blockquote>
+      <p><a href="index.html"><img src="images/owl_button.jpg" width="50" height="50" />Home</a>
+          <a href="carla.html"><img src="images/carla_button.jpg" width="50" height="65" />Meet Carla </a>
+          <a href="reading.html"><img src="images/read_button.jpg" />Reading</a>
+          <a href="writing.html"><img src="images/write_button.jpg" width="50" height="50" />Writing</a>
+          <a href="math.html"><img src="images/arith_button.jpg" />Arithmetic</a>
+<br /></p></blockquote> </div>
+  <div id="content">
+<p>This multiplication test will increase in difficulty as you prove you are ready for harder problems.Each part will increase in difficulty 
+as you prove you are ready for harder problems. You may choose whether you want to move to another
+level after getting 5 questions correct or you may choose how many problems you want to
+attempt at any level.
+</p>
+<p><input type="button" onclick="multiplyIt()" value="Begin the test" /> </p>
+</div>
+</div>
+<div id="footer">  <h3>*Carla's Motto: Never miss a chance to teach -- and to learn!</h3>
+</div>
+</body>
+</html>

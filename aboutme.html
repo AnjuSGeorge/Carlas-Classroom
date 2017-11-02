@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Carla's Classroom | About Me!</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!--
+.style1 {font-size: 24px}
+.style2 {font-size: 18px}
+.style3 {
+	color: #0000FF;
+	font-size: 18px;
+}
+-->
+</style>
+<script>
+function getName()
+{
+	var name = prompt("What's your name?","");
+	document.getElementById('myname').innerHTML = name;
+}
+function getAge()
+{
+	var age = prompt("How old are you?","");
+	document.getElementById('myage').innerHTML = age;
+}
+function getSubject()
+{
+	var subject = prompt("What do you like best in school?","");
+	document.getElementById('mysubject').innerHTML = subject;
+}
+function getTeacher()
+{
+	var teacher = prompt("Who's your favourite teacher?","");
+	var favourite = "CARLA";
+	document.getElementById('myteacher').innerHTML = favourite;
+}
+
+function showActivities()
+{
+	window.open("activities.html","_blank");
+}
+function getActivity1()
+{
+	var activity1 = prompt("Enter your first choice of activity","");
+	document.getElementById('myActivity1').innerHTML = activity1;
+}
+
+function getActivity2()
+{
+	var activity2 = prompt("Enter your second choice of activity","");
+	document.getElementById('myActivity2').innerHTML = activity2;
+}
+
+
+</script>
+</head>
+<body>
+<div id="container">
+
+  <img src="images/owl_reading.JPG" width="175" height="166" class="floatleft" />  
+  <h1 id="logo"><em>Carla's Classroom</em></h1>
+  <p>&nbsp;</p>
+  <div align="left">
+    <blockquote>
+      <p><a href="index.html"><img src="images/owl_button.jpg" width="50" height="50" />Home</a>
+          <a href="carla.html"><img src="images/carla_button.jpg" width="50" height="65" />Meet Carla </a>
+          <a href="reading.html"><img src="images/read_button.jpg" width="50" height="50" />Reading</a>
+          <a href="writing.html"><img src="images/write_button.jpg" width="50" height="50" />Writing</a>
+          <a href="math.html"><img src="images/arith_button.jpg" width="50" height="50" />Arithmetic</a>
+		  <a href="aboutme.html"><img src="images/carla_kids.jpg" width="50" height="50" />About me!</a>
+<br />  
+  <a href="carla_spelling.html" style='padding-left : 650px'>Spelling Test</a>   
+<br />  
+          </p>
+    </blockquote>
+  </div>
+  <div id="content">
+  <p><img src="images/girl.jpg" class="floatleft"  /></p>
+  <p><button type="button" onclick="getName()">Enter your name </button>
+	Hi there,<span id="myname" >Little Fella</span></p> 
+	<p><button type="button" onclick="getAge()">Enter your age </button>
+	You're <span id="myage" > ??? </span> &nbsp;years old? Wow!</p> 
+	<p><button type="button" onclick="getSubject()">Enter your favourite subject </button>
+	You like <span id="mysubject" > ??? </span> &nbsp;best. We'll do a lot of that here.</p> 
+	<p><button type="button" onclick="getTeacher()">Who's your favourite teacher? </button>
+	<span id="myteacher" > ??? </span> &nbsp;is the best!. </p> 
+	<p><button type="button"  onclick="showActivities()">View activities</button></p>
+	<p><button type="button" onclick="getActivity1()">Choose First Activity </button>
+	<span id="myActivity1" > ??? </span> &nbsp; is my first choice of activity.</p> 
+	<p><button type="button" onclick="getActivity2()">Choose Second Activity </button>
+	<span id="myActivity2" > ??? </span> &nbsp;is my second choice. </p> 
+	
+	<p><img src="images/boy.jpg" class="floatright"  /></p>
+</div>
+<div id="footer">  <h3><span class="style1">*</span><span class="style3">Carla's Motto: </span><span class="style2">Never miss a chance to 
+teach -- and to learn!</span></h3>
+<span class="specialh4"><span class="style2">**</span>Answer: Even though Writing and Arithmetic don't start with the letter R, if you say them aloud: Reading, Writing, and 'Rithmetic, 
+they all sound like words that begin with R. </span>
+</div>
+</div>
+</body>
+</html>

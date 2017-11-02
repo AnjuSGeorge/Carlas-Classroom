@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>Carla's Classroom | Fun With Factors</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="carlaFactors.js"></script>
+<script>
+function factorIt()
+{
+	//declare and initialize variables and arrays
+	var yourNum = 0;
+	var total = 0;
+	var test = 0;
+	var choice = "y";
+	var factor = 0;
+	var ranOne = 0;
+	var complgth = 0;
+	var studlgth = 0;
+	var score = 0;
+	var usedNums = new Array();
+	var myFactors = new Array();
+	var notAfactor = new Array();
+	var easyNums = new Array();
+	var allFactors = new Array();
+	var easyNums = One();
+	var easylgth = easyNums.length;
+	var incorrectlgth = notAfactor.length;
+	notAfactor.splice(0, incorrectlgth);
+	
+	//outer loop goes until student gets X amt right or quits
+	while (choice == "y")
+	{
+		//clean out old information
+		total = 0;
+		document.getElementById("factor_num").innerHTML = ("&nbsp;");
+		document.getElementById("used_factor").innerHTML = ("&nbsp;");
+		document.getElementById("result_1").innerHTML = ("&nbsp;");
+		
+		//pick num to factor
+		ranOne = Math.floor(Math.random()*20);
+		//check number
+		yourNum = easyNums[ranOne];
+		usedlgth = usedNums.length;
+		//check if number selected has been used
+		var check = true;
+		if (easylgth == usedlgth)
+			intermediate();
+		while (check == true)
+		{
+			check = false;
+			for (var i = 0; i <= usedlgth;i++)
+			{
+				if (usedNums[i] == yourNum)
+				{
+					ranOne = Math.floor(Math.random()*20);
+					yourNum = easyNums[ranOne];
+					check = true;
+				}//end of if
+			}// end of for
+		}//end of while check true
+		//add number picked to used array
+		usedNums.push(yourNum);
+		//get all factors of number
+		allFactors = getFactors(yourNum);
+		//clear out array from previous
+		myFactors.splice(0,studlgth);
+		//factor one number loop
+		while (score < 3) //keep going until 3 numbers have been factored
+		{
+			// get a factor
+			document.getElementById("factor_num").innerHTML = yourNum;
+			factor = prompt("Enter a factor of "+ yourNum); 
+			//check to see if student response is a real factor
+			test = yourNum / factor;
+			//if incorrect
+			if (test != parseInt(yourNum / factor))
+			{
+				//store incorrect response
+				notAfactor.push(factor);
+				//keep track of number of incorrect responses
+				document.getElementById("result_1").innerHTML
+					= (factor + " is not a factor of " + yourNum + ". Your incorrect entries so ar are " + notAfactor.toString());
+				total++;
+				//alert with total incorrect responses
+				alert("Total incorrect responses: "+ total);
+							
+			}
+			//if correct 
+			if (test == parseInt(yourNum / factor))
+			{
+				//add to factors so far
+				myFactors.push(factor);
+				//display
+				document.getElementById("used_factor").innerHTML = myFactors.toString();
+			}
+			//check if all factors given
+			complgth = allFactors.length;
+			studlgth = myFactors.length;
+			if ( complgth == studlgth )
+			{
+			//alert("enetered checking whether complete");
+				score++;
+				alert(" Score = "+ score);
+				document.getElementById("result_1").innerHTML = ("All factors of " + yourNum +
+											" have been identified");
+				if (score < 3)
+				{
+					choice = prompt("Ready for another number ? Type y for yes, n for no: ");
+				}// end of if for < 3
+				break;
+			}
+			//if 5 incorrect responses
+			if (total == 5)
+			{
+				document.getElementById("result_1").innerHTML = ("You have had too many errors");
+				break;
+			}
+		}
+		// if score = 3
+		
+		if (score == 3)
+		{
+			//check if want to progress to next level
+			//alert("next level");
+			document.getElementById("done").innerHTML = ("Congratulations. You can move to next level");
+			choice = "n";
+			intermediate();
+		}
+	}
+	function intermediate()
+	{
+		alert("Congrats ! You have successfully completed basic factoring. Try advanced factoring now. ");
+	}
+	
+}
+</script>
+</head>
+<body>
+<div id="container">
+	<img src="images/owl_logo.jpg" class="floatleft" />  
+	<h1 id="logo"><em>Carla's Classroom</em></h1>
+	<p>&nbsp; </p><p>&nbsp; </p>
+	<div align="left">
+		<blockquote>
+		<a href="index.html"><img src="images/owl_button.jpg" />Home</a>
+        <a href="carla.html"><img src="images/carla_button.jpg" />Meet Carla </a>
+        <a href="reading.html"><img src="images/read_button.jpg" />Reading</a>
+        <a href="writing.html"><img src="images/write_button.jpg" />Writing</a>
+        <a href="math.html"><img src="images/arith_button.jpg" />Arithmetic</a><br />               
+        </blockquote>
+	</div>
+	<div id="content">
+		<p>This test will increase in difficulty as you prove you are ready for harder problems. As soon as you get 3 problems correct in Level One, you will progress to the next level.</p>
+		<p>When you begin Level One, you will be given a number between 1 and 20. You will be prompted for all the factors of that number. When you find all the factors, you will be given a new number. If you make 5 incorrect entries, you will be given a new number. </p>
+		<p><input type="button" onclick="factorIt()" value="begin the test" /> <div id = "done">&nbsp;</div></p>
+		<p>Number to factor: <div id = "factor_num">&nbsp;</div></p>
+		<p>Your factors so far: <div id = "used_factor">&nbsp;</div></p>
+		<p>Instant feedback: <div id = "result_1">&nbsp;</div></p>
+		<p>Next level:<br /><div id = "result_2">&nbsp;</div></p>
+	</div>
+	</div>
+	<div id="footer">  <h3>*Carla's Motto: Never miss a chance to teach -- and to learn!</h3>
+	</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Carla's Groups</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script>
+//create the functions to get the student's name, HW and test averages
+function getValues()
+{
+var count = 0;
+var arrayNames = new Array();
+var arrayMarks = new Array();
+var name = "";
+var mark = 0;
+while (name != "*")
+{
+	name = prompt("Enter the student's name or enter * when you are done");
+	mark = prompt("Enter " + name +"'s marks");
+	if (name == "*")
+	break;
+	arrayNames[count] = name;
+	arrayMarks[count] = Math.ceil(mark);
+	count++;
+	
+}//end of while
+bubbleIt(arrayNames,arrayMarks);
+
+var totStudents = arrayNames.length;
+var range = (arrayMarks[totStudents - 1] - arrayMarks[0]);
+var range1 = Math.round(range / 3);
+var grp1 = (arrayMarks[0] + range1);
+var grp2 = grp1 + range1;
+var arrayMarkBlue = new Array();
+var arrayMarkRed = new Array();
+var arrayMarkGreen = new Array();
+var iBlue = 0;
+var iRed = 0;
+var iGreen = 0;
+for (var i = 0; i <= (totStudents - 1); i++)
+{
+	if ((arrayMarks[i] >= arrayMarks[0] )&& (arrayMarks[i] <= grp1))
+		{
+			arrayMarkBlue[iBlue] =arrayNames[i];
+			iBlue++;
+		}
+	else if ((arrayMarks[i] >= grp1 )&& (arrayMarks[i] <= grp2))
+		{
+			arrayMarkRed[iRed] =arrayNames[i];
+			iRed++;
+		}
+	else 
+		{
+			arrayMarkGreen[iGreen] =arrayNames[i];
+			iGreen++;
+		}
+	
+}
+ var blueGrp = "";
+ for (var i = 0; i < arrayMarkBlue.length; i++)
+ blueGrp = blueGrp + arrayMarkBlue[i] + "</t>     ";
+ var redGrp = "";
+ for (var i = 0; i < arrayMarkRed.length; i++)
+ redGrp = redGrp + arrayMarkRed[i] + "    ";
+ var greenGrp = "";
+ for (var i = 0; i < arrayMarkGreen.length; i++)
+ greenGrp = greenGrp + arrayMarkGreen[i] + "    ";
+ //alert("blueGrp"+blueGrp);
+ //alert("redGrp"+redGrp);
+ //alert("greenGrp"+greenGrp);
+ document.getElementById('blues').innerHTML = blueGrp;
+ document.getElementById('reds').innerHTML = redGrp;
+ document.getElementById('greens').innerHTML = greenGrp;
+
+}
+function bubbleIt(Names,Marks)
+{
+	var flag = 0;
+	var tempName = "";
+	var tempMark = 0;
+	var arrayLength = 0;
+	arrayLength = Names.length;
+	while (flag == 0)
+	{
+		flag = 1;
+		for (var k = 0; k <= (arrayLength - 2); k++)
+		{
+			if (Marks[k] > Marks[k+1])
+			{
+				tempMark = Marks[k];
+				Marks[k] = Marks[k+1];
+				Marks[k+1] = tempMark;
+				tempName = Names[k];
+				Names[k] = Names[k+1];
+				Names[k+1] = tempName;
+				flag = 0;
+			}
+		}
+		
+	}
+}//end of function
+
+</script>
+</head>
+<body>
+<div id="container">
+
+  <img src="images/owl_logo.jpg" class="floatleft" />  
+   <h2>Carla's groups </h2>
+<h2 class="style2">  Blues Reds Greens</h2>
+  <p>&nbsp;</p>
+  <div style ="clear:both;"></div>  
+  <div align="left"><blockquote>
+		<p><a href="index.html"><img src="images/owl_button.jpg" />Home</a>
+        <a href="carla.html"><img src="images/carla_button.jpg" />Meet Carla </a>
+        <a href="reading.html"><img src="images/read_button.jpg" />Reading</a>
+        <a href="writing.html"><img src="images/write_button.jpg" />Writing</a>
+        <a href="math.html"><img src="images/arith_button.jpg" />Arithmetic</a>
+		<br /></p></blockquote></div>
+
+
+	
+<div><h3><u>Carla's groups</u><br /> </h3>
+<input type ="button" onclick="getValues();" value = "Enter details"></button></p>
+<h2> &nbsp;&nbsp; Blues </h2><br />
+<p><span id = "blues">&nbsp; </span></p><br />
+<h2> &nbsp;&nbsp; Reds </h2><br />
+<p><span id = "reds">&nbsp; </span></p><br />
+<h2> &nbsp;&nbsp; Greens </h2><br />
+<p><span id = "greens">&nbsp; </span></p><br />
+
+</div>
+ <div style="clear:both;"></div>
+
+</div>
+</div>
+</body>
+</html>

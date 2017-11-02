@@ -1,0 +1,184 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Carla's Classroom | Create Your Story</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!--
+.style1 {font-size: 24px}
+.style2 {font-size: 24px; font-style: italic; line-height: 80%; }
+-->
+</style>
+<script>
+function getSentence()
+{
+	// initialize variables
+	var mySub = " ";
+	var myVerb = " ";
+	var mydirObj = " ";
+	var myindirObj = " ";
+	var myObj = " ";
+	var myPrepop = " ";
+	var myfirstWord =" ";
+	var mySelect = " ";
+	var sentence = false;
+	var newSentence = " ";
+	var i = 0;
+	var subject = false;
+	var verb = false;
+	var dirobject = false;
+	var indirobject = false;
+	var prepos = false;
+	var idNum = " ";
+	var dirOrindir = " ";
+	//create loop to get story
+	for(i = 1; i < 7; i++)
+	{
+		while (subject == false)
+		{
+			mySub = prompt("Please pick a word from the list as subject: "," ");
+			if ((mySub == "boy") || (mySub == "pool") || (mySub == "girl") || (mySub == "store") || (mySub == "cat") || (mySub == "table") 
+					|| (mySub == "dog")  || (mySub == "bed") || (mySub == "teacher") || (mySub == "book")|| (mySub == "bike") || (mySub == "cakes"))
+			 {
+				subject = true;
+				mySub = "The " + mySub;
+			}
+			else
+			alert("That is not a subject");
+		}//end of while for subject
+		while (verb == false)
+		{
+			myVerb = prompt("Please pick a word from the list as verb: "," ");
+			if ((myVerb == "loves") || (myVerb == "swims") || (myVerb == "rides") || (myVerb == "eats") || (myVerb == "runs") || (myVerb == "jumps")|| (myVerb == "reads")|| (myVerb == "hides"))
+			{
+				verb = true;
+			}
+			else
+				alert("That is not a verb");
+			
+			
+		}// end of while for verb
+		dirOrindir = prompt("DO you want to use an indirect object? Enter 'y/n' :"," ");
+		if (dirOrindir == 'y')
+		{
+			while (indirobject == false)
+			{
+				myindirObj = prompt("Please pick a word from the list as indirect object: "," ");
+				if ((myindirObj == "boy") || (myindirObj == "pool") || (myindirObj == "girl") || (myindirObj == "store") || (myindirObj == "cat") || (myindirObj == "table") 
+						|| (myindirObj == "dog")  || (myindirObj == "bed") || (myindirObj == "teacher") || (myindirObj == "book")|| (myindirObj == "bike") || (myindirObj == "cake"))
+				 {
+					indirobject = true;
+					//mySub = "The " + mySub;
+				}
+				else
+				alert("That is not an indirect object");
+			}//end of while for indirectobject
+			if (indirobject == true)
+			{
+				while (prepos == false)
+				{
+				myPrepos = prompt("Please pick a word from the list as preposition: "," ");
+				if ((myPrepos == "in") || (myPrepos == "on") || (myPrepos == "to") || (myPrepos == "with") || (myPrepos == "off") || (myPrepos == "under"))
+				 {
+					prepos = true;
+					//mySub = "The " + mySub;
+				}
+				else
+				alert("That is not a preposition");
+				}
+				myObj = myPrepos +" the " + myindirObj;
+			}// end of indirect object true
+				
+		}// end of if for dirOrindir
+		if (dirOrindir == 'n')
+		{
+			while (dirobject == false)
+			{
+				mydirObj = prompt("Please pick a word from the list as direct object: "," ");
+				if ((mydirObj == "me") || (mydirObj == "up") || (mydirObj == "out") || (mydirObj == "fast") || (mydirObj == "underwater") || (mydirObj == "down"))
+				 {
+					dirobject = true;
+					//mySub = "The " + mySub;
+				}
+				else
+				alert("That is not a direct object");
+			}//end of while for subject
+			myObj = mydirObj;
+		 }// end of if for n
+		 sentence = true;
+		 //alert(sentence);
+		while (sentence == true)
+		{
+		//alert("entered while for printing");
+			newSentence =  mySub +" " + myVerb + " " + myObj + ".";
+		//alert(i);
+			//alert(newSentence);
+			idNum = "sentence" + i;
+			document.getElementById(idNum).innerHTML = newSentence;
+			sentence = false;
+			
+		}// end of while for sentence
+		mySub = " ";
+		myVerb = " ";
+		myObj = " ";
+		sentence = false;
+		subject = false;
+		verb = false;
+		object = false;
+		dirobject = false;
+		indirobject = false;
+		prepos = false;
+		newSentence = " ";
+
+	}	//end of for loop for i	
+}//end of function getSentence
+</script>
+</head>
+<body>
+<div id="container">
+
+  <img src="images/owl_logo.jpg" class="floatleft" />  
+   <h2>Create Your Story </h2>
+<h2 class="style2">  An Extended Grammar Lesson</h2>
+  <p>&nbsp;</p>
+  <div style ="clear:both;"></div>  
+  <div align="left"><blockquote>
+		<p><a href="index.html"><img src="images/owl_button.jpg" />Home</a>
+        <a href="carla.html"><img src="images/carla_button.jpg" />Meet Carla </a>
+        <a href="reading.html"><img src="images/read_button.jpg" />Reading</a>
+        <a href="writing.html"><img src="images/write_button.jpg" />Writing</a>
+        <a href="math.html"><img src="images/arith_button.jpg" />Arithmetic</a>
+		<br /></p></blockquote></div>
+<div id="content">
+<table width = "95%" align="center">
+<tr><td>
+<table width= "60%" align = "center">
+<tr><td colspan = 6>Here are your words: </td></tr>
+<!--note: you can change the words as you want -->
+<td>boy</td><td>pool</td><td>loves</td><td>me</td><td>in</td><td>girl</td></tr>
+<tr><td>store</td><td>swims</td><td>up</td><td>on</td><td>cat</td><td>table</td></tr>
+<tr><td>rides</td><td>out</td><td>to</td><td>dog</td><td>bed</td><td>eats</td></tr>
+<tr><td>fast</td><td>with</td><td>teacher</td><td>book</td><td>runs</td><td>underwater</td></tr>
+<tr><td>off</td><td>bike</td><td>cake</td><td>jumps</td><td>down</td><td>under</td></tr>
+<tr><td>reads</td><td>hides</td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td colspan = 6> <input type="button" id="sentence" value="begin" onclick="getSentence();" />
+</td></tr></table></tr></td>
+<tr><td><p>My Story</p></td></tr>
+<!-- create the area where the story will be displayed -->
+<tr><td id = "sentence1"> Sentence 1</td></tr>
+<tr><td id = "sentence2"> Sentence 2</td></tr>
+<tr><td id = "sentence3"> Sentence 3</td></tr>
+<tr><td id = "sentence4"> Sentence 4</td></tr>
+<tr><td id = "sentence5"> Sentence 5</td></tr>
+<tr><td id = "sentence6"> Sentence 6</td></tr>
+</table>
+</div>
+<div id="footer">  <h3><span class="style1">*</span>Carla's Motto: Never miss a chance to teach -- and to learn!
+</h3>
+<span class="specialh4"></span>
+</div>
+</div>
+</body>
+</html>

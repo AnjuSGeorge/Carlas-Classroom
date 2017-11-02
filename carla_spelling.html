@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Carla's Classroom | An Appetite for Spelling</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	//declare and initialize variables
+	var word1 = "avocado";
+	var word2 = "bananas";
+	var word3 = "celery";
+	var word4 = "lemonade";
+	var word5 = "onions";
+	var result = " ";
+	// Question 1
+	function showPrompt1()
+	{
+		word1 = prompt("Enter your answer");
+		result = (word1 == "avocado")? "You're right!":"Sorry, that's incorrect";
+	}
+	function showResult1()
+	{		 alert(result);	}
+	//Question 2
+	function showPrompt2()
+	{
+		word2 = prompt("Enter your answer");
+		result = (word2 == "bananas")? "You're right!":"Sorry, that's incorrect";
+	}
+	function showResult2()
+	{		 alert(result);		}
+	//Question 3
+	function showPrompt3()
+	{
+		word3 = prompt("Enter your answer");
+		result = (word3 == "celery")? "You're right!":"Sorry, that's incorrect";
+	}
+	function showResult3()
+	{		alert(result);	
+	}
+	//Question 4
+	function showPrompt4()
+	{
+		word4 = prompt("Enter your answer");
+		result = (word4 == "lemonade")? "You're right!":"Sorry, that's incorrect";
+	}
+	function showResult4()
+	{		alert(result);	
+	}
+	//Question 5
+	function showPrompt5()
+	{
+		word5 = prompt("Enter your answer");
+		result = (word5 == "onions")? "You're right!":"Sorry, that's incorrect";
+	}
+	function showResult5()
+	{		alert(result);			}
+	</script>
+</head>
+<body>
+<div id="container">
+<img src="images/writing_big.jpg" class="floatleft" />  
+<h1 id="logo"><em>An Appetite for Spelling </em></h1>
+  <div align="left">
+    <blockquote>
+      <p><a href="index.html"><img src="images/owl_button.jpg" width="50" height="50" />Home</a>
+          <a href="carla.html"><img src="images/carla_button.jpg" width="50" height="65" />Meet Carla </a>
+          <a href="reading.html"><img src="images/read_button.jpg" />Reading</a>
+          <a href="writing.html"><img src="images/write_button.jpg" width="50" height="50" />Writing</a>
+          <a href="math.html"><img src="images/arith_button.jpg" />Arithmetic</a>
+		   <a href="aboutme.html"><img src="images/carla_kids.jpg" width="50" height="50" />About me!</a>
+		  <br  />
+		 		   	 		  
+		  <a href="carla_spelling.html" style='padding-left : 450px'>Spelling Test1</a>
+		  
+		   <a href="carla_spelling2.html" style='padding-left : 450px'>Spelling Test2</a>
+<br /></p></blockquote> </div>
+  <div id="content">
+<p>For this exercise you will be shown some pictures and, for each picture you will be asked to spell the word that describes the picture. Type your answers in all lowercase letters. </p>
+<p>Question 1: What is this? <img src="images/avocado.jpg"  /></p>
+<input type="button" onclick="showPrompt1()" value="Answer Q. 1"/>
+<input type="button" onclick="showResult1()" value="Check answer"/>
+<p>Question 2: What's this?<img src="images/bananas.jpg"  /></p>
+<input type="button" onclick="showPrompt2()" value="Answer Q. 2"/>
+<input type="button" onclick="showResult2()" value="Check answer"/> 
+<p>Question 3: What's this? <img src="images/celery.jpg"  /></p>
+<input type="button" onclick="showPrompt3()" value="Answer Q. 3"/>
+<input type="button" onclick="showResult3()" value="Check answer"/> 
+<p>Question 4: What's this?<img src="images/lemonade.jpg"  /></p>
+<input type="button" onclick="showPrompt4()" value="Answer Q. 4"/>
+<input type="button" onclick="showResult4()" value="Check answer"/> 
+<p>Question 5: What's this? <img src="images/onions.jpg"  /></p>
+<input type="button" onclick="showPrompt5()" value="Answer Q. 5"/>
+<input type="button" onclick="showResult5()" value="Check answer"/> 
+</div>
+<div id="footer">  <h3>*Carla's Motto: Never miss a chance to teach -- and to learn!</h3>
+</div>
+</body>
+</html>

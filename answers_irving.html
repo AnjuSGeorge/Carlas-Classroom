@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Reading Lesson Questions: Washington Irving</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script>
+function startIt(story)
+{
+	//create function to allow Carla to enter questions
+	var numRows = parseInt(prompt("How many questions are there for this story?"));
+	for (var i =0; i <numRows;i++)
+	document.getElementById('div'+i).innerHTML=((i + 1)+". "+ (prompt("Enter the question number "+ (i + 1) + ":")));
+	
+}
+	
+</script>
+</head>
+<body>
+<div id="container">
+  <img src="images/owl_logo.jpg" class="floatleft" />  
+  <h2>Carla's Classroom<br />
+  Reading Comprehension</h2>
+   <div id = "content" style="width: 700px; margin-left: auto; margin-right: auto;">
+		<h3>Rip Van Winkle by Washington Irving</h3>
+		<div style = " float: left;">
+			<!-- create button to start entering questions
+			and spans to place questions on the page -->
+			<form name="ans">
+			<p>Enter your name: <input type = "text" id = "name" value = "" /></p>
+			<h4> Enter the answers for each question. Press submit when you are done</h4>
+			<p>Answer 1&nbsp;&nbsp;<textarea name = "Answer1" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 2&nbsp;&nbsp;<textarea name = "Answer2" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 3&nbsp;&nbsp;<textarea name = "Answer3" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 4&nbsp;&nbsp;<textarea name = "Answer4" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 5&nbsp;&nbsp;<textarea name = "Answer5" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 6&nbsp;&nbsp;<textarea name = "Answer6" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 7&nbsp;&nbsp;<textarea name = "Answer7" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 8&nbsp;&nbsp;<textarea name = "Answer8" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 9&nbsp;&nbsp;<textarea name = "Answer9" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p>Answer 10&nbsp;&nbsp;<textarea name = "Answer10" rows = "5" cols = "50"></textarea>&nbsp;</p>
+			<p><input type = "button" value = "Submit"></p>
+		</div>
+		</form>
+	<div style="clear:both;"></div>
+</div>
+	<div id="footer">
+		<h3>* Carla's Motto: Never miss a chance to teach -- and to learn!</h3>
+	</div>
+</div>
+</body>
+</html>
+ 

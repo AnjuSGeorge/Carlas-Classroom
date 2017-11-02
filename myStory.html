@@ -1,0 +1,52 @@
+<head>
+   <script language="javascript" type="text/javascript"></script>
+   <script>
+    var result='';
+function GetParam(name)
+{
+//alert("entered");
+  var start=location.search.indexOf("?"+name+"=");
+  if (start<0) start=location.search.indexOf("&"+name+"=");
+  if (start<0) return '';
+  start += name.length+2;
+  var end=location.search.indexOf("&",start)-1;
+  if (end<0) end=location.search.length;
+ 
+  for(var i=start;i<=end;i++) {
+    var c=location.search.charAt(i);
+    result=result+(c=='+'?' ':c);
+	}
+	//alert(result);
+	document.slides.story.value=result;
+
+		return unescape(result);
+	
+}
+function display()
+{
+alert(result);
+alert("enetered display");
+	//document.slides.here1.value=result;
+	
+}
+
+  
+ 
+
+</script>
+</head>
+
+<body onload="GetParam('story')">
+
+<form name="slides" id = "slides" method="get">
+<table>
+    <tr>
+	<textarea id="story" rows = "10" cols = "50"  >myStory</textarea>
+		
+    </tr>
+	
+</table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Reading Lesson: Beatrix Potter</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="carlaSource.js"></script>
+<script>
+function signIn()
+{
+	//create function to determine if user is a student or Carla
+	var carla;
+	var entry;
+	var password;
+	var student;
+	var status;
+	var key1 = "carlaIsTheBest";
+	var key2 = "ready";
+	status = prompt("Are you a student? Type y or n");
+	if (status == 'n')
+	{	
+		password = prompt("Enter the password:");
+		carla = checkWord(password,key1);
+		if (carla)
+		{
+			alert("Click the button to begin entering the questions.");
+			//document.getElementById("create").style.visibility = "visible";
+		}
+		else
+		alert("Bye bye");
+	}//end of status == n
+	if (status != 'n')
+	{
+		document.getElementById("create").style.visibility = "hidden";
+		entry = prompt("Are you ready for questions? Type 'ready' or 'no'");
+		student = checkWord(entry,key2);
+		if (student)
+			alert("Click the button to view your questions.");
+		else
+			alert("Bye bye");
+	}//end of status not equal to n
+	
+}
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: 24px}
+.style2 {font-size: 18px}
+.style3 {
+	color: #0000FF;
+	font-size: 18px;
+}
+-->
+</style>
+</head>
+<body>
+<div id="container">
+  <img src="images/owl_logo.jpg" class="floatleft" /> 
+  <h2>Carla's Classroom <br /> Reading Comprehension</h2>
+  
+    <div id = "content" style="width: 700px; margin-left: auto; margin-right: auto;">
+		<p>The Tale of Peter Rabbit by Beatrix Potter</p>
+		<div style = "float: left;">
+			<p><input type="button" id="potter" value="signin" onclick="signIn();" />
+			<p> <span id = "create"> <input type = "button" id = "create" value = "Enter the questions" onclick="location.href = 'questions_potter.html'"; /></span>
+			<span id = "view"> <input type = "button" id = "view" value = "View the questions" onclick="location.href = 'questions_potter.html'"; /></span></p>
+		</div>
+	<div style="clear:both;"></div>
+</div>
+	<div id="footer">
+		<h3>*Carla's Motto: Never miss a chance to teach -- and to learn!</h3>
+	</div>
+</div>
+</body>
+</html>

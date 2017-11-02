@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Help Carla improve| Take Survey</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script>
+//create the functions to get the student's name, HW and test averages
+function getName(stu_name)
+{
+	var studentName = document.getElementById(stu_name).value;
+	document.getElementById('sName').innerHTML = studentName;
+}
+function getHW(hw_avg)
+{
+	var hwAvg = document.getElementById(hw_avg).value;
+	document.getElementById('hw').innerHTML = hwAvg;
+}
+function getTest(test_avg)
+{
+	var testAvg = document.getElementById(test_avg).value;
+	document.getElementById('test').innerHTML = testAvg;
+}
+
+function getArithmetic(picked)
+{
+	var arithmetic = document.getElementById(picked).value;
+	document.getElementById('math').innerHTML = arithmetic;
+}
+function getReading(picked)
+{
+	var reading = document.getElementById(picked).value;
+	document.getElementById('read').innerHTML = reading;
+}
+function getWrite(picked)
+{
+	var writing = document.getElementById(picked).value;
+	document.getElementById('writing').innerHTML = writing;
+}
+function getComments(comments)
+{
+	var carlaComments = document.getElementById(comments).value;
+	document.getElementById('mycomments').innerHTML = carlaComments;
+}
+
+function getFairness(fairness)
+{
+	var carlaFairness = document.getElementById(fairness).value;
+	document.getElementById('fair').innerHTML = carlaFairness;
+}
+
+function getWilling(willing)
+{
+	var carlaWilling = document.getElementById(willing).value;
+	document.getElementById('willing').innerHTML = carlaWilling;
+}
+
+function getClarity(clarity)
+{
+	var carlaClarity = document.getElementById(clarity).value;
+	document.getElementById('clarity').innerHTML = carlaClarity;
+}
+
+function getTesting(testing)
+{
+	var carlaTesting = document.getElementById(testing).value;
+	document.getElementById('testing').innerHTML = carlaTesting;
+}
+
+//create functions for attendance, arithmetic, reading, writing, total grade
+//place information in designated areas on the web page
+//create area for comments
+
+
+</script>
+</head>
+<body>
+<!-- create a form action to send the results via email -->
+<form name="ratecarla"  action = "mailto:carla@carlaschool.net?subject=Rate Carla"
+method = "post" enctype="text/plain">
+ <div id="container">
+  <img src="images/owl_reading.jpg" class="floatleft" />  
+  <h2 id="logo"><em>Rate Carla</em></h2>
+</div><div style="clear:both;"></div>
+  <div id="content">
+<p><label>Student's Name:</label> 
+	<!-- create input box for name and call appropriate function -->
+	<input type="text" name="Student Name: " id="stu_name" size = "40" value = " "/>
+	<input type = "button" onclick = "getName('stu_name')" value = "ok"></button></p>
+	
+	<!-- create input box for test average and call appropriate function -->
+	<table width = "100%">
+	<tr><td><h4>Arithmetic</h4></td><td><h4>Reading</h4></td><td><h4>Writing</h4></td></tr>
+	<tr><td><input type="radio" name ="Arithmetic: " id = "m1" value = "excellent" onclick ="getArithmetic('m1')"/>Excellent</td>
+	<td><input type="radio" name ="Reading: " id = "r1" value = "excellent" onclick ="getReading('r1')"/>Excellent</td>
+	<td><input type="radio" name ="Writing: " id = "w1" value = "excellent" onclick ="getWrite('w1')"/>Excellent</td></tr>
+	<tr><td><input type="radio" name ="Arithmetic: " id = "m2" value = "satisfactory" onclick ="getArithmetic('m2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Reading: " id = "r2" value = "satisfactory" onclick ="getReading('r2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Writing: " id = "w2" value = "satisfactory" onclick ="getWrite('w2')"/>Satisfactory</td></tr>
+	<tr><td><input type="radio" name ="Arithmetic: " id = "m3" value = "needs improvement" onclick ="getArithmetic('m3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Reading: " id = "r3" value = "needs improvement" onclick ="getReading('r3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Writing: " id = "w3" value = "needs improvement" onclick ="getWrite('w3')"/>Needs Improvement</td></tr>
+	</table>
+	<table width = "100%">
+	<tr><td><h4>Personality & Teaching Methods</h4></td></tr>
+	<tr><td><h4>Fairness</h4></td><td><h4>Willingness to Listen</h4></td><td><h4>Clarity of explanations</h4></td><td><h4>Testing Methods</h4></td></tr>
+	<tr><td><input type="radio" name ="Fairness: " id = "f1" value = "excellent" onclick ="getFairness('f1')"/>Excellent</td>
+	<td><input type="radio" name ="Willing: " id = "wl1" value = "excellent" onclick ="getWilling('wl1')"/>Excellent</td>
+	<td><input type="radio" name ="Clarity: " id = "c1" value = "excellent" onclick ="getClarity('c1')"/>Excellent</td>
+	<td><input type="radio" name ="testing: " id = "t1" value = "excellent" onclick ="getTesting('t1')"/>Excellent</td>
+	</tr>
+	<tr><td><input type="radio" name ="Fairness: " id = "f2" value = "satisfactory" onclick ="getFairness('f2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Willing: " id = "wl2" value = "satisfactory" onclick ="getWilling('wl2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Clarity: " id = "c2" value = "satisfactory" onclick ="getClarity('c2')"/>Satisfactory</td>
+	<td><input type="radio" name ="testing: " id = "t2" value = "satisfactory" onclick ="getTesting('t2')"/>Satisfactory</td>
+	</tr>
+	<tr><td><input type="radio" name ="Fairness: " id = "f3" value = "needs improvement" onclick ="getFairness('f3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Willing: " id = "wl3" value = "needs improvement" onclick ="getWilling('wl3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Clarity: " id = "c3" value = "needs improvement" onclick ="getClarity('c3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="testing: " id = "t3" value = "needs improvement" onclick ="getTesting('t3')"/>Needs Improvement</td>
+	</tr>
+	</table>
+	
+	<p><textarea name="comments" id="comments" rows="5" cols="50">Comments</textarea>
+	<input type ="button" onclick="getComments('comments')" value = "ok"></button></p>
+	
+<div><h3><u>Student Report</u><br />
+<!-- create areas for Carla's report to be displayed-->
+Student Name: <span id = "sName">&nbsp;</span><br />
+Arithmetic: <span id = "math">&nbsp;</span><br />
+Reading: <span id = "read">&nbsp;</span><br />
+Writing: <span id = "writing">&nbsp;</span><br />
+Fairness: <span id = "fair">&nbsp;</span><br />
+Willingness to Listen: <span id = "willing">&nbsp;</span><br />
+Clarity of Explanation:<span id = "clarity">&nbsp;</span><br />
+Testing Methods:<span id = "testing">&nbsp;</span><br />
+Comments: <span id = "mycomments">&nbsp;</span><br />
+</div>
+ <div style="clear:both;"></div>
+<p>	<input type="reset" value="Start over"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value ="Submit report"></p>
+</form>
+</div>
+</div>
+</body>
+</html>

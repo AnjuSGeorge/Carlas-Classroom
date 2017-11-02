@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Reading Lesson Questions: Rudyard Kipling</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script>
+function startIt(story)
+{
+	//create function to allow Carla to enter questions
+	var numRows = parseInt(prompt("How many questions are there for this story?"));
+	for (var i =0; i <numRows;i++)
+	document.getElementById('div'+i).innerHTML=((i + 1)+". "+ (prompt("Enter the question number "+ (i + 1) + ":")));
+	
+}
+	
+</script>
+</head>
+<body>
+<div id="container">
+  <img src="images/owl_logo.jpg" class="floatleft" />  
+  <h2>Carla's Classroom<br />
+  Reading Comprehension</h2>
+   <div id = "content" style="width: 700px; margin-left: auto; margin-right: auto;">
+		<h3>How the Leopard Got its Spots by Rudyard Kipling</h3>
+		<div style = "width: 300px; float: left;">
+			<!-- create button to start entering questions
+			and spans to place questions on the page -->
+			<p><input type = "button" id = "kipling" value = "questions" onclick = "startIt('kipling');" />
+			<p><span id = "div0">&nbsp;</span></p>
+			<p><span id = "div1">&nbsp;</span></p>
+			<p><span id = "div2">&nbsp;</span></p>
+			<p><span id = "div3">&nbsp;</span></p>
+			<p><span id = "div4">&nbsp;</span></p>
+			<p><span id = "div5">&nbsp;</span></p>
+			<p><span id = "div6">&nbsp;</span></p>
+			<p><span id = "div7">&nbsp;</span></p>
+			<p><span id = "div8">&nbsp;</span></p>
+			<p><span id = "div9">&nbsp;</span></p>
+		</div>
+	<div style="clear:both;"></div>
+</div>
+	<div id="footer">
+		<h3>* Carla's Motto: Never miss a chance to teach -- and to learn!</h3>
+	</div>
+</div>
+</body>
+</html>
+ 

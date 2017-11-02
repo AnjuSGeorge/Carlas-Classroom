@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Carla's Classroom | Progress Report Form</title>
+<link href="carla.css" rel="stylesheet" type="text/css" />
+<script>
+//create the functions to get the student's name, HW and test averages
+function getName(stu_name)
+{
+	var studentName = document.getElementById(stu_name).value;
+	document.getElementById('sName').innerHTML = studentName;
+}
+function getHW(hw_avg)
+{
+	var hwAvg = document.getElementById(hw_avg).value;
+	document.getElementById('hw').innerHTML = hwAvg;
+}
+function getTest(test_avg)
+{
+	var testAvg = document.getElementById(test_avg).value;
+	document.getElementById('test').innerHTML = testAvg;
+}
+
+function getAttendance(picked)
+{
+	var attendance = document.getElementById(picked).value;
+	document.getElementById('att').innerHTML = attendance;
+}
+function getArithmetic(picked)
+{
+	var arithmetic = document.getElementById(picked).value;
+	document.getElementById('math').innerHTML = arithmetic;
+}
+function getReading(picked)
+{
+	var reading = document.getElementById(picked).value;
+	document.getElementById('read').innerHTML = reading;
+}
+function getWrite(picked)
+{
+	var writing = document.getElementById(picked).value;
+	document.getElementById('writing').innerHTML = writing;
+}
+function getGrade(picked)
+{
+	var grade = document.getElementById(picked).value;
+	document.getElementById('overall').innerHTML = grade;
+}
+function getComments(comments)
+{
+	var carlaComments = document.getElementById(comments).value;
+	document.getElementById('mycomments').innerHTML = carlaComments;
+}
+
+
+//create functions for attendance, arithmetic, reading, writing, total grade
+//place information in designated areas on the web page
+//create area for comments
+
+
+</script>
+</head>
+<body>
+<!-- create a form action to send the results via email -->
+<form name="progress"  action = "mailto:carla@carlaschool.net?subject=Student Progress Report"
+method = "post" enctype="text/plain">
+ <div id="container">
+  <img src="images/owl_reading.jpg" class="floatleft" />  
+  <h2 id="logo"><em>Carla's Progress Report</em></h2>
+</div><div style="clear:both;"></div>
+  <div id="content">
+<p><label>Student's Name:</label> 
+	<!-- create input box for name and call appropriate function -->
+	<input type="text" name="Student Name: " id="stu_name" size = "40" value = " "/>
+	<input type = "button" onclick = "getName('stu_name')" value = "ok"></button></p>
+	<p><label>Homework average:</label>
+	<!-- create input box for homework average and call appropriate function -->
+	<input type="text" name="Homework Average: " id="hw_avg" size = "8" value = " "/>
+	<input type = "button" onclick = "getHW('hw_avg')" value = "ok"></button>&nbsp;&nbsp;&nbsp;
+	<label>Test average:</label>
+	<input type="text" name="Test Average: " id="test_avg" size = "8" value = " "/>
+	<input type = "button" onclick = "getTest('test_avg')" value = "ok"></button></p>
+	
+	<!-- create input box for test average and call appropriate function -->
+	<table width = "100%">
+	<tr><td><h4>Attendance</h4></td><td><h4>Arithmetic</h4></td><td><h4>Reading</h4></td><td><h4>Writing</h4></td></tr>
+	<tr><td><input type="radio" name ="Attendance: " id = "a1" value = "excellent" onclick ="getAttendance('a1')"/>Excellent</td>
+	<td><input type="radio" name ="Arithmetic: " id = "m1" value = "excellent" onclick ="getArithmetic('m1')"/>Excellent</td>
+	<td><input type="radio" name ="Reading: " id = "r1" value = "excellent" onclick ="getReading('r1')"/>Excellent</td>
+	<td><input type="radio" name ="Writing: " id = "w1" value = "excellent" onclick ="getWrite('w1')"/>Excellent</td></tr>
+	<tr><td><input type="radio" name ="Attendance: " id = "a2" value = "satisfactory" onclick ="getAttendance('a2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Arithmetic: " id = "m2" value = "satisfactory" onclick ="getArithmetic('m2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Reading: " id = "r2" value = "satisfactory" onclick ="getReading('r2')"/>Satisfactory</td>
+	<td><input type="radio" name ="Writing: " id = "w2" value = "satisfactory" onclick ="getWrite('w2')"/>Satisfactory</td></tr>
+	<tr><td><input type="radio" name ="Attendance: " id = "a3" value = "needs improvement" onclick ="getAttendance('a3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Arithmetic: " id = "m3" value = "needs improvement" onclick ="getArithmetic('m3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Reading: " id = "r3" value = "needs improvement" onclick ="getReading('r3')"/>Needs Improvement</td>
+	<td><input type="radio" name ="Writing: " id = "w3" value = "needs improvement" onclick ="getWrite('w3')"/>Needs Improvement</td></tr>
+	</table>
+	<br /><p> <label>Overall Semester Grade:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+	<!-- create radio buttons to select letter grade: A, B, etc. -->
+	<input type="radio" name ="grade: " id = "A" value = "A" onclick ="getGrade('A')"/>A &nbsp;&nbsp;
+	<input type="radio" name ="grade: " id = "B" value = "B" onclick ="getGrade('B')"/>B &nbsp;&nbsp;
+	<input type="radio" name ="grade: " id = "C" value = "C" onclick ="getGrade('C')"/>C &nbsp;&nbsp;
+	<input type="radio" name ="grade: " id = "D" value = "D" onclick ="getGrade('D')"/>D &nbsp;&nbsp;
+	<input type="radio" name ="grade: " id = "E" value = "E" onclick ="getGrade('E')"/>E &nbsp;&nbsp;
+	<input type="radio" name ="grade: " id = "F" value = "F" onclick ="getGrade('F')"/>F&nbsp;&nbsp;
+	</p>
+	
+	<p><textarea name="comments" id="comments" rows="5" cols="50">Comments</textarea>
+	<input type ="button" onclick="getComments('comments')" value = "ok"></button></p>
+	
+<div><h3><u>Student Report</u><br />
+<!-- create areas for Carla's report to be displayed-->
+Student Name: <span id = "sName">&nbsp;</span><br />
+Homework Average: <span id = "hw">&nbsp;</span><br />
+Test Average: <span id = "test">&nbsp;</span><br />
+Attendance: <span id = "att">&nbsp;</span><br />
+Arithmetic: <span id = "math">&nbsp;</span><br />
+Reading: <span id = "read">&nbsp;</span><br />
+Writing: <span id = "writing">&nbsp;</span><br />
+Overall Semester Grade: <span id = "overall">&nbsp;</span><br />
+Comments: <span id = "mycomments">&nbsp;</span><br />
+</div>
+ <div style="clear:both;"></div>
+<p>	<input type="reset" value="Start over"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value ="Submit report"></p>
+</form>
+</div>
+</div>
+</body>
+</html>
